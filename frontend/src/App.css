@@ -1,0 +1,167 @@
+/* Base styles */
+:root {
+  --primary-color: #6366f1;
+  --secondary-color: #8b5cf6;
+  --accent-color: #4f46e5;
+  --background-color: #f8fafc;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --success-color: #22c55e;
+  --error-color: #ef4444;
+  --warning-color: #f59e0b;
+}
+
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-primary);
+  background-color: var(--background-color);
+}
+
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Utility classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+/* Button styles */
+.btn {
+  @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2;
+}
+
+.btn-secondary {
+  @apply bg-purple-600 text-white hover:bg-purple-700 focus:ring-2 focus:ring-purple-500 focus:ring-offset-2;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-200;
+}
+
+.card:hover {
+  @apply shadow-xl transform -translate-y-1;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-gray-700 mb-1;
+}
+
+/* Alert styles */
+.alert {
+  @apply p-4 rounded-lg mb-4;
+}
+
+.alert-success {
+  @apply bg-green-100 text-green-800 border border-green-200;
+}
+
+.alert-error {
+  @apply bg-red-100 text-red-800 border border-red-200;
+}
+
+.alert-warning {
+  @apply bg-yellow-100 text-yellow-800 border border-yellow-200;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-4 border-gray-300;
+}
+
+.spinner-primary {
+  @apply border-t-indigo-600;
+}
+
+/* Responsive container */
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply text-gray-600 hover:text-indigo-600 transition-colors duration-200;
+}
+
+.nav-link-active {
+  @apply text-indigo-600 font-medium;
+}
+
+/* Footer styles */
+.footer {
+  @apply bg-gray-50 border-t border-gray-200;
+}
+
+/* Lottery ticket styles */
+.ticket {
+  @apply relative bg-white rounded-xl shadow-md p-6 border-2 border-dashed border-indigo-200;
+}
+
+.ticket-selected {
+  @apply border-indigo-600 bg-indigo-50;
+}
+
+/* Draw animation container */
+.draw-container {
+  @apply relative overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white;
+}
+
+/* Wallet connection button */
+.wallet-button {
+  @apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+}
+
+/* Toast notification container */
+.toast-container {
+  @apply fixed bottom-4 right-4 z-50;
+}
+
+/* Modal styles */
+.modal-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-40;
+}
+
+.modal-container {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+}
+
+.modal-content {
+  @apply bg-white rounded-xl shadow-xl max-w-md w-full mx-auto p-6;
+}
